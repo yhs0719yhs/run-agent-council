@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Council"
+  short_description: "Exact-100 multi-agent research and final audit"
+  default_prompt: "Use $run-agent-council to solve this task with independent research, critique, repair, design, and two fresh final-review roles; keep iterating until the deterministic gate returns exact 100/100 FINAL_PASS or report a schema-valid essential blocker."
