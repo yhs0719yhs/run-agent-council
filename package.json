@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yhs0719yhs/run-agent-council.git"
+    "url": "git+https://github.com/yhs0719yhs/run-agent-council.git"
   },
   "homepage": "https://github.com/yhs0719yhs/run-agent-council",
   "bugs": {

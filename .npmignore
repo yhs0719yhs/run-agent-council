@@ -1,0 +1,6 @@
+**/__pycache__/
+*.py[cod]
+tests/
+assets/
+.github/
+README.ko.md
