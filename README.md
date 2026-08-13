@@ -58,24 +58,24 @@ Ask Codex to install directly from GitHub:
 
 ```text
 Use $skill-installer to install the skill from
-https://github.com/yhs0719yhs/codex-agent-council/tree/main/run-agent-council
+https://github.com/yhs0719yhs/run-agent-council/tree/main/run-agent-council
 ```
 
 Or copy it manually on macOS/Linux:
 
 ```bash
-git clone https://github.com/yhs0719yhs/codex-agent-council.git
+git clone https://github.com/yhs0719yhs/run-agent-council.git
 codex_skills_dir="${CODEX_HOME:-$HOME/.codex}/skills"
 target_dir="$codex_skills_dir/run-agent-council"
 test ! -e "$target_dir" || { echo "Already exists: $target_dir" >&2; exit 1; }
 mkdir -p "$codex_skills_dir"
-cp -R codex-agent-council/run-agent-council "$target_dir"
+cp -R run-agent-council/run-agent-council "$target_dir"
 ```
 
 PowerShell:
 
 ```powershell
-git clone https://github.com/yhs0719yhs/codex-agent-council.git
+git clone https://github.com/yhs0719yhs/run-agent-council.git
 
 $codexBase = if ($env:CODEX_HOME) {
     $env:CODEX_HOME
@@ -88,10 +88,28 @@ if (Test-Path -LiteralPath $targetFolder) {
     throw "Already exists: $targetFolder"
 }
 New-Item -ItemType Directory -Force -Path $skillsFolder | Out-Null
-Copy-Item -Recurse -LiteralPath '.\codex-agent-council\run-agent-council' -Destination $targetFolder
+Copy-Item -Recurse -LiteralPath '.\run-agent-council\run-agent-council' -Destination $targetFolder
 ```
 
 Open a new Codex task after installation so the skill list is refreshed.
+
+### Install with npm or pnpm
+
+Install the published package and copy the bundled skill into your Codex skills directory:
+
+```bash
+npm install --global run-agent-council
+run-agent-council
+```
+
+You can also use the package without a global install:
+
+```bash
+npx run-agent-council
+pnpm dlx run-agent-council
+```
+
+Set `CODEX_HOME` before running the installer if you use a custom Codex directory. After installation, open a new Codex task so the skill list is refreshed.
 
 ## Run
 
@@ -157,7 +175,10 @@ python <skill-creator>/scripts/quick_validate.py run-agent-council
 │   ├── references/protocol.md
 │   ├── references/rubric.md
 │   └── scripts/score_gate.py
+├── bin/install.js
+├── package.json
 ├── tests/
+├── assets/run-agent-council-usage-demo.mp4
 ├── .github/workflows/validate.yml
 ├── README.md
 ├── README.ko.md
@@ -181,7 +202,7 @@ With [GitHub CLI](https://cli.github.com/) already authenticated, publish your o
 git add .
 git commit -m "feat: add Agent Council Codex skill"
 git branch -M main
-gh repo create codex-agent-council --public --source . --remote origin --push \
+gh repo create run-agent-council --public --source . --remote origin --push \
   --description "A Codex skill that iterates independent research, critique, repair, design, and final audit until every quality gate reaches 100/100."
 ```
 
@@ -191,7 +212,7 @@ If you create the empty GitHub repository in the web UI instead, replace the acc
 git add .
 git commit -m "feat: add Agent Council Codex skill"
 git branch -M main
-git remote add origin https://github.com/yhs0719yhs/codex-agent-council.git
+git remote add origin https://github.com/yhs0719yhs/run-agent-council.git
 git push -u origin main
 ```
 
