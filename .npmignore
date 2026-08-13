@@ -1,4 +1,6 @@
 **/__pycache__/
+run-agent-council/scripts/__pycache__/
+**/*.pyc
 *.py[cod]
 tests/
 assets/
