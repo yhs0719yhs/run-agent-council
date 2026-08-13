@@ -206,3 +206,9 @@ Suggested topics: `codex`, `openai-codex`, `codex-skill`, `ai-agents`, `multi-ag
 ## License
 
 [MIT](LICENSE)
+
+## Demo video
+
+Watch the simulated end-to-end usage flow for `run-agent-council`, from TaskBrief creation and independent role dispatch through repair, regression evaluation, and the final quality gate.
+
+[Open the English usage demo](assets/run-agent-council-usage-demo.mp4)
